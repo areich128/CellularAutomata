@@ -15,10 +15,13 @@ kernel = np.array([
 # x, y = np.indices((100, 100))
 # distance = np.sqrt((x - center[0]) ** 2 + (y - center[1]) ** 2)
 # array[distance <= radius] = 1
-array = np.random.randint(2, size=(100, 100)) < 0.005
-array = array.astype(int)
-# array = np.zeros((100,100))
-# array[:][49:55] = 1
+
+# array = np.random.randint(2, size=(100, 100)) < 0.005
+# array = array.astype(int)
+
+array = np.zeros((100,100))
+array[1][40:60] = 1
+array[99][40:60] = 1
 age = np.zeros_like(array)
 
 # Function to update the plot in each animation frame
@@ -39,11 +42,22 @@ def update(frame):
             elif array[i][j] == 1:
                 age[i][j] += 1
 
+    # ADD IN WRAP-AROUND EDGE CONDITION HERE
+    # for n in range(100):
+    #     array[1][n] = kernel_sum = np.sum(array[max(0, i-1):min(100, i+2), max(0, j-1):min(100, j+99)])
+    #     conv_sum = kernel_sum - array[i][j]
+    # for m in range(100):
+    #     array[m][1] = kernel_sum = np.sum(array[max(0, i-1):min(100, i+2), max(0, j-1):min(100, j+2)])
+    #     conv_sum = kernel_sum - array[i][j]
     array = new_array
     normalized_age = age / np.max(age)
+    age_status = 0
     # push test change
-    im.set_array(normalized_age)
-    print(age[50][50])
+    if age_status == 0:
+        im.set_array(array)
+    elif age_status == 1:
+        im.set_array(normalized_age)
+    # print(age[50][50])
 
     return [im]
 
