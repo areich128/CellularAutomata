@@ -28,7 +28,7 @@ def update(frame):
                 new_array[i][j] = 0
 
     array = new_array
-    # something else
+    # push test change
     im.set_array(array)
     return [im]
 
