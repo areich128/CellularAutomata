@@ -34,7 +34,7 @@ for i in range(1, array_2d.shape[0] - 1):
         if (i - 1 >= 1) and (i+2 <= array_2d.shape[0]):
             if (j - 1 >= 1) and (j + 2 <= array_2d.shape[1]):
                 result[i][j] = np.sum(array_2d[i-1:i+2, j-1:j+2] * kernel)
-            else:
+            
 
 plt.subplot(1, 3, 1)
 plt.imshow(kernel, cmap='Grays')
