@@ -30,9 +30,9 @@ array_2d = garray_2d / 255.0
 # array_2d = np.random.random((100,100))
 
 kernel1 = np.array([
-    [-4, 0, 1],
-    [-4, 0, 1],
-    [-4, 0, 1]
+    [0, 1, 0],
+    [1, -4, 1],
+    [0, 1, 0]
 ])
 
 

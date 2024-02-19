@@ -9,7 +9,7 @@ from matplotlib.animation import FuncAnimation
 # distance = np.sqrt((x - center[0]) ** 2 + (y - center[1]) ** 2)
 # array[distance <= radius] = 1
 
-array = np.random.randint(2, size=(100, 100)) < 0.005
+array = np.random.randint(2, size=(150, 150)) < 0.001
 array = array.astype(int)
 
 # array = np.zeros((100, 100))
@@ -48,7 +48,7 @@ def update(frame):
 
     array = new_array
     normalized_age = age / np.max(age)
-    age_status = 1
+    age_status = 0
     if age_status == 0:
         im.set_array(array)
     elif age_status == 1:
@@ -56,15 +56,6 @@ def update(frame):
 
     return [im]
 
-    # ADD IN WRAP-AROUND EDGE CONDITION HERE
-    # for n in range(100):
-    #     array[1][n] = kernel_sum = np.sum(array[max(0, i-1):min(100, i+2), max(0, j-1):min(100, j+99)])
-    #     conv_sum = kernel_sum - array[i][j]
-    #     array[99][n] = kernel_sum = np.sum(array[max(0, i - 1):min(100, i + 2), max(0, j - 1):min(100, j + 2)])
-    #     conv_sum = kernel_sum - array[i][j]
-    # for m in range(100):
-    #     array[m][1] = kernel_sum = np.sum(array[max(0, i-1):min(100, i+2), max(0, j-1):min(100, j+2)])
-    #     conv_sum = kernel_sum - array[i][j]
 
 # Create a figure and axis
 fig, ax = plt.subplots()
