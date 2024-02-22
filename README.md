@@ -9,3 +9,5 @@ Experimenting with cellular automata using python with an intention to create a 
 `UserInputImpl.py` is step 3 -- allowing the user to create the starting conditions for their GoL simulation.
 
 `LeniaImpl1.py` is step 4. This will be the non-discreet GoL, with a range of values each cell can become and a more complicated convolution kernel.
+
+Sources: [Source 1](https://link.springer.com/article/10.1134/S1995423914040016) , [Source 2](https://arxiv.org/pdf/2005.03742.pdf)
